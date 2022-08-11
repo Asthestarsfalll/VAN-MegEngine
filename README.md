@@ -1,6 +1,6 @@
 # VAN-MegEngine
 
-The MegEngine Implementation of VAN（Visual Attention Network ）.
+The MegEngine Implementation of VAN(Visual Attention Network).
 
 ## Usage
 
