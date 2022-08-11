@@ -21,12 +21,20 @@ Import from megengine.hub:
 Way 1:
 
 ```python
-from  megengine import hub
-modelhub = hub.import_module(repo_info='asthestarsfalll/van-megengine', git_host='github.com')
+from functools import partial
+import megengine.module as M
+from megengine import hub
 
-# load VAN model and custom on you own
-van = modelhub.VAN(embed_dims=[32, 64, 160, 256], mlp_ratios=[
-                   8, 8, 4, 4], norm_layer=partial(M.LayerNorm, eps=1e-6), depths=[3, 3, 5, 2], **kwargs)
+modelhub = hub.import_module(
+    repo_info='asthestarsfalll/van-megengine', git_host='github.com')
+
+    # load VAN model and custom on you own
+    van = modelhub.VAN(embed_dims=[32, 64, 160, 256], mlp_ratios=[
+                       8, 8, 4, 4], norm_layer=partial(M.LayerNorm, eps=1e-6), depths=[3, 3, 5, 2])
+
+                       # load pretrained model
+                       pretrained_model = modelhub.van_b0(pretrained=True)
+                       
 
 # load pretrained model 
 pretrained_model = modelhub.van_b0(pretrained=True) 
