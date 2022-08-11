@@ -26,7 +26,7 @@ import megengine.module as M
 from megengine import hub
 
 modelhub = hub.import_module(
-    repo_info='asthestarsfalll/van-megengine', git_host='github.com')
+    repo_info='asthestarsfalll/van-megengine:main', git_host='github.com')
 
     # load VAN model and custom on you own
     van = modelhub.VAN(embed_dims=[32, 64, 160, 256], mlp_ratios=[
@@ -48,7 +48,7 @@ from  megengine import hub
 # load pretrained model 
 model_name = 'van_b0'
 pretrained_model = hub.load(
-    repo_info='asthestarsfalll/van-megengine', entry=model_name, git_host='github.com', pretrained=True)
+    repo_info='asthestarsfalll/van-megengine:main', entry=model_name, git_host='github.com', pretrained=True)
 ```
 
 Currently support van_b0, van_b1, van_b2 , bat you can run convert_weights.py to convert other models(Due to official repo only offer s from van_b0 to van_b3, so the others don't )
@@ -66,7 +66,7 @@ model.load_state_dict(mge.load('./pretrained/van_b3.pkl'))
 # or
 model_name = 'van_b3'
 model = hub.load(
-    repo_info='asthestarsfalll/resnest-megengine', entry=model_name, git_host='github.com')
+    repo_info='asthestarsfalll/van-megengine:main', entry=model_name, git_host='github.com')
 model.load_state_dict(mge.load('./pretrained/van_b3.pkl'))
 ```
 
