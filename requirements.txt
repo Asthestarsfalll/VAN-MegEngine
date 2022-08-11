@@ -1,3 +1,4 @@
 megengine
 torch
 timm
+scipy
